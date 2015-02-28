@@ -4,9 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TweetsViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeftViewController">
             <connections>
-                <outlet property="tableView" destination="zAF-eA-QqJ" id="odf-l3-rhD"/>
+                <outlet property="tableView" destination="MaW-rb-53i" id="x6o-lF-BCA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,29 +15,20 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zAF-eA-QqJ">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MaW-rb-53i">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="zAF-eA-QqJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3ok-9a-sVL"/>
-                <constraint firstAttribute="bottom" secondItem="zAF-eA-QqJ" secondAttribute="bottom" id="HR4-TL-X8W"/>
-                <constraint firstAttribute="trailing" secondItem="zAF-eA-QqJ" secondAttribute="trailing" id="ODS-zi-mKa"/>
-                <constraint firstItem="zAF-eA-QqJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="grM-3X-i8o"/>
+                <constraint firstItem="MaW-rb-53i" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="E0C-en-MVk"/>
+                <constraint firstAttribute="trailing" secondItem="MaW-rb-53i" secondAttribute="trailing" id="ciH-vD-dfr"/>
+                <constraint firstAttribute="bottom" secondItem="MaW-rb-53i" secondAttribute="bottom" id="eMY-lJ-wbf"/>
+                <constraint firstItem="MaW-rb-53i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gFi-2q-aWg"/>
             </constraints>
-            <connections>
-                <outletCollection property="gestureRecognizers" destination="R1h-Ah-lej" appends="YES" id="OO6-HK-zf1"/>
-            </connections>
-            <point key="canvasLocation" x="81" y="238"/>
+            <point key="canvasLocation" x="139" y="154"/>
         </view>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="R1h-Ah-lej" userLabel="Table View Pan Gesture Recognizer">
-            <connections>
-                <action selector="onTableViewPanGesture:" destination="-1" id="Ebi-V8-D06"/>
-            </connections>
-        </panGestureRecognizer>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

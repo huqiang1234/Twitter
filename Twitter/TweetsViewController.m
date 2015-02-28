@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSArray *tweets;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
+- (IBAction)onTableViewPanGesture:(UIPanGestureRecognizer *)sender;
 - (void)onLogout;
 - (void)onNew;
 - (void)onRefresh;
@@ -64,6 +65,27 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onTableViewPanGesture:(UIPanGestureRecognizer *)sender {
+  CGPoint velocity = [sender velocityInView:self.view];
+  switch (sender.state) {
+    case UIGestureRecognizerStateBegan:
+      break;
+    case UIGestureRecognizerStateChanged:
+      break;
+    case UIGestureRecognizerStateEnded:
+      if (velocity.x > 0) {
+        [self.delegate tweetsViewController:self shouldShowMenu:YES];
+      } else {
+        [self.delegate tweetsViewController:self shouldShowMenu:NO];
+      }
+
+      break;
+    default:
+      break;
+  }
+
 }
 
 - (void)onLogout {

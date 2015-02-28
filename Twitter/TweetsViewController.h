@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class TweetsViewController;
+
+@protocol TweetsViewControllerDelegate <NSObject>
+
+- (void)tweetsViewController:(TweetsViewController *)vc shouldShowMenu:(BOOL)shouldShowMenu;
+
+@end
+
 @interface TweetsViewController : UIViewController
+
+@property (nonatomic, weak) id<TweetsViewControllerDelegate> delegate;
 
 @end
