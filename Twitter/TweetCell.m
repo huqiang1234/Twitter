@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *profileImageViewTopConstaints;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewToRetweetIconConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *NameToRetweetTextConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *retweetTextToTopConstraint;
 
 @property (nonatomic, strong) NSString *userScreenName;
 @property (nonatomic, strong) NSString *idString;
@@ -92,6 +93,7 @@
     self.topRetweetUserLabel.hidden = YES;
     [self removeConstraint:self.imageViewToRetweetIconConstraint];
     [self removeConstraint:self.NameToRetweetTextConstraint];
+    [self removeConstraint:self.retweetTextToTopConstraint];
     [self updateElementConstaint:self.profileImageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual constant:12];
     [self updateElementConstaint:self.nameLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual constant:10];
   } else {
