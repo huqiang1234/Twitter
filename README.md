@@ -31,6 +31,6 @@ Time spent: `10`
 
 ### Walkthrough
 
-![Video Walkthrough]()
+![Video Walkthrough](Twitter2.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
