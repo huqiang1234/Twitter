@@ -98,13 +98,11 @@
 
 - (void)setRetweet:(BOOL)isRetweet username:(NSString *)username {
   if (isRetweet == NO) {
-    //[self.topRetweetImageView removeFromSuperview];
-    //[self.topRetweetUserLabel removeFromSuperview];
-    self.topRetweetImageView.hidden = YES;
-    self.topRetweetUserLabel.hidden = YES;
     [self removeConstraint:self.imageViewToRetweetIconConstraint];
     [self removeConstraint:self.retweetToTopContraint];
     [self removeConstraint:self.retweetToNameContraint];
+    self.topRetweetImageView.hidden = YES;
+    self.topRetweetUserLabel.hidden = YES;
     [self updateElementConstaint:self.profileImageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual constant:12];
     [self updateElementConstaint:self.nameLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual constant:10];
   } else {

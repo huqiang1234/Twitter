@@ -27,6 +27,10 @@
 @property (nonatomic, strong) NSArray *tweets;
 
 - (IBAction)onPanGesture:(UIPanGestureRecognizer *)sender;
+
+- (void)onLeftMenu;
+- (void)onNew;
+
 @end
 
 @implementation ProfileViewController
@@ -34,6 +38,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-24.png"] style:UIBarButtonItemStylePlain target:self action:@selector(onLeftMenu)];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"new-24.png"] style:UIBarButtonItemStylePlain target:self action:@selector(onNew)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -126,6 +133,15 @@
     default:
       break;
   }
+}
+
+- (void)onLeftMenu {
+  [self.delegate profileViewController:self shouldShowMenu:YES];
+}
+
+- (void)onNew {
+  EditTweetViewController *evc = [[EditTweetViewController alloc] init];
+  [self.navigationController pushViewController:evc animated:YES];
 }
 
 @end
