@@ -46,7 +46,7 @@
 
   [self.tableView registerNib:[UINib nibWithNibName:@"TweetCell" bundle:nil] forCellReuseIdentifier:@"TweetCell"];
 
-  self.tableView.estimatedRowHeight = 120;
+  self.tableView.estimatedRowHeight = 180;
   self.tableView.rowHeight = UITableViewAutomaticDimension;
 
   [[TwitterClient sharedInstance] mentionsTimeLineWithParams:nil completion:^(NSArray *tweets, NSError *error) {

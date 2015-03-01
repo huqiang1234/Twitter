@@ -59,7 +59,7 @@
 
   [self.tableView registerNib:[UINib nibWithNibName:@"TweetCell" bundle:nil] forCellReuseIdentifier:@"TweetCell"];
 
-  self.tableView.estimatedRowHeight = 120;
+  self.tableView.estimatedRowHeight = 180;
   self.tableView.rowHeight = UITableViewAutomaticDimension;
 
   NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:self.user.screenname, @"screen_name", nil];
