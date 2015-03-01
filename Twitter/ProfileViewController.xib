@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController">
+            <connections>
+                <outlet property="nameLabel" destination="Ebr-d3-sYv" id="HpD-Mf-5A0"/>
+                <outlet property="numFollowerLabel" destination="xc5-5h-6Gb" id="goa-kC-kgz"/>
+                <outlet property="numFollowingLabel" destination="BUL-o4-pXT" id="qVS-mI-lcE"/>
+                <outlet property="numTweetLabel" destination="tvU-Ca-YtB" id="HhJ-SC-GbU"/>
+                <outlet property="profileBannerImageView" destination="o1h-PF-EWx" id="2rZ-Hy-f3D"/>
+                <outlet property="profileImageView" destination="Qa1-DB-1ay" id="2a4-vI-LRu"/>
+                <outlet property="screenNameLabel" destination="uDY-W6-Nf6" id="3gx-MS-4Lu"/>
+                <outlet property="tableView" destination="SM8-oF-Huf" id="lfq-CJ-p30"/>
+                <outlet property="taglineLabel" destination="Smv-Di-P2B" id="9lA-7R-4au"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o1h-PF-EWx">
+                    <rect key="frame" x="0.0" y="64" width="320" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="sDh-kk-yPX"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qa1-DB-1ay">
+                    <rect key="frame" x="18" y="158" width="48" height="48"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="7WV-Vf-kIM"/>
+                        <constraint firstAttribute="height" constant="48" id="XrW-11-ajm"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="otN-lm-NJm" appends="YES" id="tjR-aV-460"/>
+                    </connections>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charlie Hu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebr-d3-sYv">
+                    <rect key="frame" x="18" y="214" width="73.5" height="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@huqiang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDY-W6-Nf6">
+                    <rect key="frame" x="18" y="235" width="54.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life is a journey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smv-Di-P2B">
+                    <rect key="frame" x="18" y="258" width="95" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="232 Tweets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvU-Ca-YtB">
+                    <rect key="frame" x="18" y="282" width="63" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="352 Following" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUL-o4-pXT">
+                    <rect key="frame" x="103" y="282" width="77.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 Followers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc5-5h-6Gb">
+                    <rect key="frame" x="195" y="282" width="71" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SM8-oF-Huf">
+                    <rect key="frame" x="0.0" y="320" width="320" height="247.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="Qa1-DB-1ay" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="18" id="0l1-Fm-JN1"/>
+                <constraint firstItem="BUL-o4-pXT" firstAttribute="leading" secondItem="tvU-Ca-YtB" secondAttribute="trailing" constant="22" id="4Z6-RG-EyU"/>
+                <constraint firstItem="SM8-oF-Huf" firstAttribute="top" secondItem="xc5-5h-6Gb" secondAttribute="bottom" constant="23.5" id="8Tf-Ue-ciH"/>
+                <constraint firstAttribute="trailing" secondItem="o1h-PF-EWx" secondAttribute="trailing" id="9oE-o9-T0M"/>
+                <constraint firstItem="Smv-Di-P2B" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="18" id="GsT-15-nMD"/>
+                <constraint firstItem="Ebr-d3-sYv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="18" id="ROt-AX-FTL"/>
+                <constraint firstItem="SM8-oF-Huf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SGG-If-zEj"/>
+                <constraint firstItem="o1h-PF-EWx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="U8u-Hy-JfH"/>
+                <constraint firstAttribute="bottom" secondItem="SM8-oF-Huf" secondAttribute="bottom" id="VTa-eF-5vO"/>
+                <constraint firstItem="uDY-W6-Nf6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="18" id="WD3-XR-5YX"/>
+                <constraint firstItem="tvU-Ca-YtB" firstAttribute="top" secondItem="Smv-Di-P2B" secondAttribute="bottom" constant="8" id="WLx-KL-2fz"/>
+                <constraint firstItem="Ebr-d3-sYv" firstAttribute="top" secondItem="Qa1-DB-1ay" secondAttribute="bottom" constant="8" id="aOv-yP-DcE"/>
+                <constraint firstAttribute="trailing" secondItem="SM8-oF-Huf" secondAttribute="trailing" id="ase-HC-uZH"/>
+                <constraint firstItem="BUL-o4-pXT" firstAttribute="centerY" secondItem="tvU-Ca-YtB" secondAttribute="centerY" id="c5H-Eu-1Ax"/>
+                <constraint firstItem="Qa1-DB-1ay" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="158" id="dEt-N1-WRm"/>
+                <constraint firstItem="Smv-Di-P2B" firstAttribute="top" secondItem="uDY-W6-Nf6" secondAttribute="bottom" constant="8.5" id="hg9-TC-o5D"/>
+                <constraint firstItem="xc5-5h-6Gb" firstAttribute="leading" secondItem="BUL-o4-pXT" secondAttribute="trailing" constant="15" id="hkH-B1-Y4O"/>
+                <constraint firstItem="o1h-PF-EWx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="iOT-DB-g3H"/>
+                <constraint firstItem="uDY-W6-Nf6" firstAttribute="top" secondItem="Ebr-d3-sYv" secondAttribute="bottom" constant="3" id="j2f-HC-KCA"/>
+                <constraint firstItem="BUL-o4-pXT" firstAttribute="centerY" secondItem="xc5-5h-6Gb" secondAttribute="centerY" id="vmk-Ou-fh0"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xc5-5h-6Gb" secondAttribute="trailing" constant="8" id="vsz-ok-SUA"/>
+                <constraint firstItem="tvU-Ca-YtB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="18" id="xET-yM-byx"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="YN9-Fy-n2i" appends="YES" id="41f-v3-9YZ"/>
+            </connections>
+            <point key="canvasLocation" x="224" y="252"/>
+        </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="YN9-Fy-n2i" userLabel="View Pan Gesture Recognizer">
+            <connections>
+                <action selector="onPanGesture:" destination="-1" id="W4m-oX-z3Z"/>
+            </connections>
+        </panGestureRecognizer>
+        <tapGestureRecognizer id="otN-lm-NJm" userLabel="Profile Image Tap Gesture Recognizer">
+            <connections>
+                <action selector="onTapProfileImage:" destination="-1" id="pef-2n-v16"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

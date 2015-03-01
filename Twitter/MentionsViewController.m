@@ -1,25 +1,25 @@
 //
-//  TweetsViewController.m
+//  MentionsViewController.m
 //  Twitter
 //
-//  Created by Charlie Hu on 2/18/15.
+//  Created by Charlie Hu on 2/28/15.
 //  Copyright (c) 2015 Charlie Hu. All rights reserved.
 //
 
-#import "TweetsViewController.h"
-#import "User.h"
-#import "Tweet.h"
+#import "MentionsViewController.h"
 #import "TwitterClient.h"
-#import "TweetCell.h"
 #import "EditTweetViewController.h"
+#import "TweetCell.h"
 #import "TweetDetailsViewController.h"
 
-@interface TweetsViewController () <UITableViewDataSource, UITableViewDelegate, TweetCellDelegate>
+@interface MentionsViewController () <UITableViewDataSource, UITableViewDelegate, TweetCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (nonatomic, strong) NSArray *tweets;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
-- (IBAction)onTableViewPanGesture:(UIPanGestureRecognizer *)sender;
+
+- (IBAction)OnPanGesture:(UIPanGestureRecognizer *)sender;
 - (void)onLogout;
 - (void)onNew;
 - (void)onRefresh;
@@ -27,11 +27,11 @@
 
 @end
 
-@implementation TweetsViewController
+@implementation MentionsViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+  [super viewDidLoad];
+  // Do any additional setup after loading the view from its nib.
   self.refreshControl = [[UIRefreshControl alloc] init];
   [self.refreshControl addTarget:self action:@selector(onRefresh) forControlEvents:UIControlEventValueChanged];
   [self.tableView insertSubview:self.refreshControl atIndex:0];
@@ -39,7 +39,7 @@
   self.tableView.delegate = self;
   self.tableView.dataSource = self;
 
-  self.title = @"Home";
+  self.title = @"Mentions";
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(onLogout)];
 
   //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"] style:UIBarButtonItemStylePlain target:self action:@selector(onLeftMenu)];
@@ -51,11 +51,8 @@
   self.tableView.estimatedRowHeight = 120;
   self.tableView.rowHeight = UITableViewAutomaticDimension;
 
-  [[TwitterClient sharedInstance] homeTimeLineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+  [[TwitterClient sharedInstance] mentionsTimeLineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
     self.tweets = tweets;
-    //for (Tweet *tweet in self.tweets) {
-    //  NSLog(@"image url: %@", tweet.user.profileImageUrl);
-    //}
     [self.tableView reloadData];
   }];
 
@@ -67,11 +64,15 @@
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onTableViewPanGesture:(UIPanGestureRecognizer *)sender {
+- (void)onLeftMenu {
+  [self.delegate mentionsViewController:self shouldShowMenu:YES];
+}
+
+- (IBAction)OnPanGesture:(UIPanGestureRecognizer *)sender {
   CGPoint velocity = [sender velocityInView:self.view];
   switch (sender.state) {
     case UIGestureRecognizerStateBegan:
@@ -80,19 +81,15 @@
       break;
     case UIGestureRecognizerStateEnded:
       if (velocity.x > 0) {
-        [self.delegate tweetsViewController:self shouldShowMenu:YES];
+        [self.delegate mentionsViewController:self shouldShowMenu:YES];
       } else {
-        [self.delegate tweetsViewController:self shouldShowMenu:NO];
+        [self.delegate mentionsViewController:self shouldShowMenu:NO];
       }
 
       break;
     default:
       break;
   }
-}
-
-- (void)onLeftMenu {
-  [self.delegate tweetsViewController:self shouldShowMenu:YES];
 }
 
 - (void)onLogout {
@@ -132,7 +129,7 @@
 # pragma mark - UIRefreshControl
 
 - (void)onRefresh {
-  [[TwitterClient sharedInstance] homeTimeLineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+  [[TwitterClient sharedInstance] mentionsTimeLineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
     self.tweets = tweets;
     //for (Tweet *tweet in self.tweets) {
     //  NSLog(@"image url: %@", tweet.user.profileImageUrl);

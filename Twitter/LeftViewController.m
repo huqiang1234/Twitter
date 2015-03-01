@@ -11,16 +11,10 @@
 #import "MenuItemCell.h"
 #import "User.h"
 
-typedef NS_ENUM(NSInteger, SectionType) {
-  SectionTypeProfile = 0,
-  SectionTypeMenu
-};
-
-typedef NS_ENUM(NSInteger, MenuType) {
-  MenuTypeHomeTimeline = 0,
-  MenuTypeMentions,
-  MenuTypeLogout
-};
+//typedef NS_ENUM(NSInteger, SectionType) {
+//  SectionTypeProfile = 0,
+//  SectionTypeMenu
+//};
 
 @interface LeftViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -53,19 +47,19 @@ typedef NS_ENUM(NSInteger, MenuType) {
 #pragma mark - table view methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  if (section == SectionTypeProfile) {
-    return 1;
-  } else {
+//  if (section == SectionTypeProfile) {
+//    return 1;
+//  } else {
     return self.menuTitles.count;
-  }
+//  }
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 2;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//  return 2;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (indexPath.section == SectionTypeProfile) {
+  if (indexPath.row == MenuTypeProfile) {
     ProfileCell *pCell = [tableView dequeueReusableCellWithIdentifier:@"ProfileCell"];
     [pCell setUser:[User currentUser]];
 
@@ -78,8 +72,14 @@ typedef NS_ENUM(NSInteger, MenuType) {
   }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  [self.delegate leftViewController:self didSelectMenuType:indexPath.row];
+}
+
 - (void)initMenuTitles {
   self.menuTitles = @[
+                      @"",
                       @"Home Timeline",
                       @"Mentions",
                       @"Logout"
