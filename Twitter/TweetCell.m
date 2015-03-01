@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *tweetTextLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *topRetweetImageView;
 @property (weak, nonatomic) IBOutlet UILabel *topRetweetUserLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *profileImageViewTopConstaints;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewToRetweetIconConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *retweetToTopContraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *retweetToNameContraint;

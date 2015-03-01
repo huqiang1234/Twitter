@@ -21,7 +21,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bloomberg Business" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgH-K9-naA">
-                        <rect key="frame" x="64" y="19" width="117.5" height="14.5"/>
+                        <rect key="frame" x="64" y="18" width="117.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="39m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypl-U1-CJX">
-                        <rect key="frame" x="297" y="17.5" width="22.5" height="13.5"/>
+                        <rect key="frame" x="297" y="16" width="22.5" height="13.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -46,8 +46,8 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="waffletchnlgy retweeted" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ee-Ng-cfZ">
-                        <rect key="frame" x="64" y="4" width="122" height="13.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <rect key="frame" x="64" y="4" width="111" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -91,7 +91,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="The USDA cites University of Oklahoma" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gy5-Qe-fXz">
-                        <rect key="frame" x="63" y="35" width="221" height="36"/>
+                        <rect key="frame" x="64" y="34" width="221" height="37"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -118,11 +118,11 @@
                     <constraint firstItem="JgH-K9-naA" firstAttribute="leading" secondItem="fTZ-Ta-EcF" secondAttribute="trailing" constant="8" id="A8e-QJ-aWM"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="To2-N1-4LI" secondAttribute="trailing" constant="8" id="CxU-MR-duL"/>
                     <constraint firstItem="GDH-SF-lLy" firstAttribute="centerY" secondItem="Sj3-07-D2x" secondAttribute="centerY" id="De5-1w-Fra"/>
-                    <constraint firstItem="XUM-m6-OAV" firstAttribute="centerY" secondItem="Ypl-U1-CJX" secondAttribute="centerY" constant="2.25" id="Df7-ci-enJ"/>
+                    <constraint firstItem="XUM-m6-OAV" firstAttribute="centerY" secondItem="Ypl-U1-CJX" secondAttribute="centerY" constant="3.25" id="Df7-ci-enJ"/>
                     <constraint firstItem="GDH-SF-lLy" firstAttribute="centerY" secondItem="aMC-c0-ZCl" secondAttribute="centerY" id="E18-LJ-pl4"/>
                     <constraint firstItem="1Ee-Ng-cfZ" firstAttribute="leading" secondItem="xlN-a7-WqU" secondAttribute="trailing" constant="8" id="RBC-xw-9w8"/>
                     <constraint firstItem="fTZ-Ta-EcF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Rqd-v7-7Tb"/>
-                    <constraint firstItem="Gy5-Qe-fXz" firstAttribute="leading" secondItem="fTZ-Ta-EcF" secondAttribute="trailing" constant="7" id="ZuC-SE-h9b"/>
+                    <constraint firstItem="Gy5-Qe-fXz" firstAttribute="leading" secondItem="fTZ-Ta-EcF" secondAttribute="trailing" constant="8" id="ZuC-SE-h9b"/>
                     <constraint firstItem="GDH-SF-lLy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="64" id="cUp-qt-Adp"/>
                     <constraint firstAttribute="bottom" secondItem="GDH-SF-lLy" secondAttribute="bottom" constant="6.5" id="dWi-X9-5w9"/>
                     <constraint firstAttribute="trailing" secondItem="Ypl-U1-CJX" secondAttribute="trailing" constant="8" id="eJx-MD-XhD"/>
@@ -137,7 +137,7 @@
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fTZ-Ta-EcF" secondAttribute="bottom" constant="8" id="mH6-ZI-l6Y"/>
                     <constraint firstItem="GDH-SF-lLy" firstAttribute="centerY" secondItem="bAa-MD-Axr" secondAttribute="centerY" id="rIh-u3-G2j"/>
                     <constraint firstItem="Ypl-U1-CJX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XUM-m6-OAV" secondAttribute="trailing" constant="8" id="uuc-mX-n7B"/>
-                    <constraint firstItem="XUM-m6-OAV" firstAttribute="centerY" secondItem="JgH-K9-naA" secondAttribute="centerY" constant="-0.25" id="v9V-2i-lJB"/>
+                    <constraint firstItem="XUM-m6-OAV" firstAttribute="centerY" secondItem="JgH-K9-naA" secondAttribute="centerY" constant="0.75" id="v9V-2i-lJB"/>
                     <constraint firstItem="GDH-SF-lLy" firstAttribute="centerY" secondItem="To2-N1-4LI" secondAttribute="centerY" id="waa-EU-afA"/>
                     <constraint firstAttribute="bottom" secondItem="To2-N1-4LI" secondAttribute="bottom" constant="6.5" id="why-df-gIV"/>
                     <constraint firstItem="Gy5-Qe-fXz" firstAttribute="top" secondItem="JgH-K9-naA" secondAttribute="bottom" constant="1" id="y7N-CD-uCZ"/>
@@ -150,7 +150,6 @@
                 <outlet property="imageViewToRetweetIconConstraint" destination="7Sv-EX-sqk" id="Ehi-H4-k60"/>
                 <outlet property="nameLabel" destination="JgH-K9-naA" id="Lzk-ma-YJD"/>
                 <outlet property="profileImageView" destination="fTZ-Ta-EcF" id="vXK-To-ECN"/>
-                <outlet property="profileImageViewTopConstaints" destination="7Sv-EX-sqk" id="tmv-Iy-XQM"/>
                 <outlet property="retweetButton" destination="bAa-MD-Axr" id="fxc-gk-uLs"/>
                 <outlet property="retweetToNameContraint" destination="hzE-sK-6hi" id="LzP-GY-di7"/>
                 <outlet property="retweetToTopContraint" destination="jLo-K8-1aW" id="ghW-ph-yzK"/>
