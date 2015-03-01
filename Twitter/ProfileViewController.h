@@ -15,6 +15,7 @@
 
 - (void)profileViewController:(ProfileViewController *)vc shouldShowMenu:(BOOL)shouldShowMenu;
 - (void)profileViewController:(ProfileViewController *)vc shouldShowHomeTimeline:(BOOL)shouldShowHomeTimeline;
+- (void)profileViewController:(ProfileViewController *)vc showProfileWithUser:(User *)user;
 
 @end
 

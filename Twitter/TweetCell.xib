@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fTZ-Ta-EcF">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fTZ-Ta-EcF">
                         <rect key="frame" x="8" y="24" width="48" height="48"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="48" id="rFD-wJ-RVk"/>
@@ -144,7 +144,6 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="NameToRetweetTextConstraint" destination="hzE-sK-6hi" id="7Nu-1c-G6d"/>
                 <outlet property="countFavoriteLabel" destination="To2-N1-4LI" id="qsb-Nt-W85"/>
                 <outlet property="countRetweetLabel" destination="aMC-c0-ZCl" id="x4S-yy-9hp"/>
                 <outlet property="favoriteButton" destination="Sj3-07-D2x" id="OhO-RM-rdk"/>
@@ -153,7 +152,8 @@
                 <outlet property="profileImageView" destination="fTZ-Ta-EcF" id="vXK-To-ECN"/>
                 <outlet property="profileImageViewTopConstaints" destination="7Sv-EX-sqk" id="tmv-Iy-XQM"/>
                 <outlet property="retweetButton" destination="bAa-MD-Axr" id="fxc-gk-uLs"/>
-                <outlet property="retweetTextToTopConstraint" destination="jLo-K8-1aW" id="Hpr-bq-ri7"/>
+                <outlet property="retweetToNameContraint" destination="hzE-sK-6hi" id="LzP-GY-di7"/>
+                <outlet property="retweetToTopContraint" destination="jLo-K8-1aW" id="ghW-ph-yzK"/>
                 <outlet property="screenNameLabel" destination="XUM-m6-OAV" id="XTw-1D-GAX"/>
                 <outlet property="sinceWhenLabel" destination="Ypl-U1-CJX" id="h2b-q1-VVO"/>
                 <outlet property="topRetweetImageView" destination="xlN-a7-WqU" id="N3c-3z-8T0"/>

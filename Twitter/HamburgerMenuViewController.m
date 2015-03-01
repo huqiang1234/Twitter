@@ -22,11 +22,14 @@
 @property (nonatomic, strong) UINavigationController *navMentionsViewController;
 @property (nonatomic, strong) UINavigationController *currentChildViewController;
 
+@property (nonatomic, strong) ProfileViewController *pvc;
+
 - (void)showMenuForCurrentViewController:(UIViewController *)vc;
 - (void)resumeCurrentViewController:(UIViewController *)vc;
 
 - (void)hideChildViewController:(UIViewController *)vc;
 - (void)showChildViewController:(UIViewController *)vc;
+- (void)showProfileViewControllerWithUser:(User *)user;
 
 @end
 
@@ -50,10 +53,10 @@
 
   self.currentChildViewController = self.navTweetsViewController;
 
-  ProfileViewController *pvc = [[ProfileViewController alloc] init];
-  pvc.delegate = self;
-  pvc.user = [User currentUser];
-  self.navProfileViewController = [[UINavigationController alloc] initWithRootViewController:pvc];
+  self.pvc = [[ProfileViewController alloc] init];
+  self.pvc.delegate = self;
+  self.pvc.user = [User currentUser];
+  self.navProfileViewController = [[UINavigationController alloc] initWithRootViewController:self.pvc];
 
   MentionsViewController *mvc = [[MentionsViewController alloc] init];
   mvc.delegate = self;
@@ -103,6 +106,11 @@
   [vc didMoveToParentViewController:self];
 }
 
+- (void)showProfileViewControllerWithUser:(User *)user {
+  self.pvc.user = user;
+  [self showChildViewController:self.navProfileViewController];
+}
+
 #pragma mark - Tweets View delegate
 
 - (void)tweetsViewController:(TweetsViewController *)vc shouldShowMenu:(BOOL)shouldShowMenu {
@@ -113,6 +121,12 @@
   }
 }
 
+- (void)tweetsViewController:(TweetsViewController *)vc showProfileWithUser:(User *)user {
+  [self hideChildViewController:self.currentChildViewController];
+  [self showProfileViewControllerWithUser:user];
+  self.currentChildViewController = self.navProfileViewController;
+}
+
 #pragma mark - Mentions View delegate
 
 - (void)mentionsViewController:(MentionsViewController *)vc shouldShowMenu:(BOOL)shouldShowMenu {
@@ -121,6 +135,12 @@
   } else {
     [self resumeCurrentViewController:self.navMentionsViewController];
   }
+}
+
+- (void)mentionsViewController:(MentionsViewController *)vc showProfileWithUser:(User *)user {
+  [self hideChildViewController:self.currentChildViewController];
+  [self showProfileViewControllerWithUser:user];
+  self.currentChildViewController = self.navProfileViewController;
 }
 
 #pragma mark - Profile View delegate
@@ -141,6 +161,12 @@
   }
 }
 
+- (void)profileViewController:(ProfileViewController *)vc showProfileWithUser:(User *)user {
+  [self hideChildViewController:self.currentChildViewController];
+  [self showProfileViewControllerWithUser:user];
+  self.currentChildViewController = self.navProfileViewController;
+}
+
 #pragma mark - Left menu methods
 
 - (void)leftViewController:(LeftViewController *)viewController didSelectMenuType:(MenuType)menuType {
@@ -150,6 +176,7 @@
     self.currentChildViewController = self.navTweetsViewController;
   } else if (menuType == MenuTypeProfile) {
     [self hideChildViewController:self.currentChildViewController];
+    self.pvc.user = [User currentUser];
     [self showChildViewController:self.navProfileViewController];
     self.currentChildViewController = self.navProfileViewController;
   } else if (menuType == MenuTypeMentions) {

@@ -36,9 +36,6 @@
                         <constraint firstAttribute="width" constant="48" id="7WV-Vf-kIM"/>
                         <constraint firstAttribute="height" constant="48" id="XrW-11-ajm"/>
                     </constraints>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="otN-lm-NJm" appends="YES" id="tjR-aV-460"/>
-                    </connections>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charlie Hu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebr-d3-sYv">
                     <rect key="frame" x="18" y="214" width="73.5" height="18"/>
@@ -118,11 +115,6 @@
                 <action selector="onPanGesture:" destination="-1" id="W4m-oX-z3Z"/>
             </connections>
         </panGestureRecognizer>
-        <tapGestureRecognizer id="otN-lm-NJm" userLabel="Profile Image Tap Gesture Recognizer">
-            <connections>
-                <action selector="onTapProfileImage:" destination="-1" id="pef-2n-v16"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

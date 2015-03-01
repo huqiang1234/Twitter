@@ -22,8 +22,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *topRetweetUserLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *profileImageViewTopConstaints;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewToRetweetIconConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *NameToRetweetTextConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *retweetTextToTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *retweetToTopContraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *retweetToNameContraint;
+
 
 @property (nonatomic, strong) NSString *userScreenName;
 @property (nonatomic, strong) NSString *idString;
@@ -34,6 +35,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *countRetweetLabel;
 @property (nonatomic, assign) NSInteger retweetedCount;
 @property (nonatomic, assign) NSInteger favoritedCount;
+
+@property (nonatomic, strong) User *user;
 
 - (void)updateElementConstaint:(id)view attribute:(NSLayoutAttribute)attribute relatedBy:(NSLayoutRelation)relatedBy constant:(CGFloat)constant;
 - (void)setRetweet:(BOOL)isRetweet username:(NSString *)username;
@@ -46,6 +49,8 @@
 
 -(void)updateDurationLabel:(NSDate *)date;
 
+- (void)handleTapGesture:(UITapGestureRecognizer *)sender;
+
 @end
 
 @implementation TweetCell
@@ -54,6 +59,10 @@
     // Initialization code
   self.profileImageView.layer.cornerRadius = 3;
   self.profileImageView.clipsToBounds = YES;
+
+  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
+  tapGesture.numberOfTapsRequired = 1;
+  [self.profileImageView addGestureRecognizer:tapGesture];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -79,6 +88,8 @@
   self.favoritedCount = tweet.favoriteCount;
   self.countRetweetLabel.text = [NSString stringWithFormat:@"%ld", (long)self.retweetedCount];
   self.countFavoriteLabel.text = [NSString stringWithFormat:@"%ld", (long)self.favoritedCount];
+
+  self.user = tweet.user;
 }
 
 - (void)updateElementConstaint:(id)view attribute:(NSLayoutAttribute)attribute relatedBy:(NSLayoutRelation)relatedBy constant:(CGFloat)constant {
@@ -92,8 +103,8 @@
     self.topRetweetImageView.hidden = YES;
     self.topRetweetUserLabel.hidden = YES;
     [self removeConstraint:self.imageViewToRetweetIconConstraint];
-    [self removeConstraint:self.NameToRetweetTextConstraint];
-    [self removeConstraint:self.retweetTextToTopConstraint];
+    [self removeConstraint:self.retweetToTopContraint];
+    [self removeConstraint:self.retweetToNameContraint];
     [self updateElementConstaint:self.profileImageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual constant:12];
     [self updateElementConstaint:self.nameLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual constant:10];
   } else {
@@ -192,6 +203,11 @@
     self.favoritedCount -= 1;
   }
   self.countFavoriteLabel.text = [NSString stringWithFormat:@"%ld", (long)self.favoritedCount];
+}
+
+- (void)handleTapGesture:(UITapGestureRecognizer *)sender {
+    NSLog(@"Profile Image tapped");
+    [self.delegate tweetCell:self showProfileWithUser:self.user];
 }
 
 @end

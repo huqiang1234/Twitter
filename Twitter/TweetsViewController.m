@@ -142,10 +142,16 @@
   }];
 }
 
+#pragma mark - tweet cell delegate methods
+
 - (void)tweetCell:(TweetCell *)cell replyTo:(NSString *)screenName {
   EditTweetViewController *evc = [[EditTweetViewController alloc] init];
   [evc setText:[NSString stringWithFormat:@"@%@ ", screenName]];
   [self.navigationController pushViewController:evc animated:YES];
+}
+
+- (void)tweetCell:(TweetCell *)cell showProfileWithUser:(User *)user {
+  [self.delegate tweetsViewController:self showProfileWithUser:user];
 }
 
 /*

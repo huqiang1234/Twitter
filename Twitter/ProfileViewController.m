@@ -27,7 +27,6 @@
 @property (nonatomic, strong) NSArray *tweets;
 
 - (IBAction)onPanGesture:(UIPanGestureRecognizer *)sender;
-- (IBAction)onTapProfileImage:(UITapGestureRecognizer *)sender;
 @end
 
 @implementation ProfileViewController
@@ -35,10 +34,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
   self.tableView.delegate = self;
   self.tableView.dataSource = self;
 
-  [self.profileBannerImageView setImageWithURL:[NSURL URLWithString:@"http://pbs.twimg.com/profile_banners/19118507/1424918755"]]; //]user.profileBannerUrl]];
+  [self.profileBannerImageView setImageWithURL:[NSURL URLWithString:self.user.profileBannerUrl]]; //]user.profileBannerUrl]];
   [self.profileImageView setImageWithURL:[NSURL URLWithString:self.user.profileImageUrl]];
   self.nameLabel.text = self.user.name;
   self.screenNameLabel.text = [NSString stringWithFormat:@"@%@", self.user.screenname];
@@ -52,7 +55,9 @@
   self.tableView.estimatedRowHeight = 120;
   self.tableView.rowHeight = UITableViewAutomaticDimension;
 
-  [[TwitterClient sharedInstance] userTimeLineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+  NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:self.user.screenname, @"screen_name", nil];
+
+  [[TwitterClient sharedInstance] userTimeLineWithParams:params completion:^(NSArray *tweets, NSError *error) {
     self.tweets = tweets;
     [self.tableView reloadData];
   }];
@@ -81,10 +86,16 @@
   return cell;
 }
 
+#pragma mark - Tweet cell delegate methods
+
 - (void)tweetCell:(TweetCell *)cell replyTo:(NSString *)screenName {
   EditTweetViewController *evc = [[EditTweetViewController alloc] init];
   [evc setText:[NSString stringWithFormat:@"@%@ ", screenName]];
   [self.navigationController pushViewController:evc animated:YES];
+}
+
+- (void)tweetCell:(TweetCell *)cell showProfileWithUser:(User *)user {
+  [self.delegate profileViewController:self showProfileWithUser:user];
 }
 
 /*
@@ -117,8 +128,4 @@
   }
 }
 
-- (IBAction)onTapProfileImage:(UITapGestureRecognizer *)sender {
-  NSLog(@"Tapped profile Image");
-  [self.delegate profileViewController:self shouldShowHomeTimeline:YES];
-}
 @end

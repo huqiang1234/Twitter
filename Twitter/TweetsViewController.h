@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @class TweetsViewController;
 
 @protocol TweetsViewControllerDelegate <NSObject>
 
 - (void)tweetsViewController:(TweetsViewController *)vc shouldShowMenu:(BOOL)shouldShowMenu;
+- (void)tweetsViewController:(TweetsViewController *)vc showProfileWithUser:(User *)user;
 
 @end
 

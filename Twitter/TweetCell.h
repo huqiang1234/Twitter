@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Tweet.h"
+#import "User.h"
 
 @class TweetCell;
 
 @protocol TweetCellDelegate <NSObject>
 
 - (void)tweetCell:(TweetCell *)cell replyTo:(NSString *)screenName;
+- (void)tweetCell:(TweetCell *)cell showProfileWithUser:(User *)user;
 
 @end
 

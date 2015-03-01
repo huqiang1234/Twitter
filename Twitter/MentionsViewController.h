@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @class MentionsViewController;
 
 @protocol MentionsViewControllerDelegate <NSObject>
 
 - (void)mentionsViewController:(MentionsViewController *)vc shouldShowMenu:(BOOL)shouldShowMenu;
+- (void)mentionsViewController:(MentionsViewController *)vc showProfileWithUser:(User *)user;
 
 @end
 
