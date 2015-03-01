@@ -79,6 +79,10 @@
   [self.contentView sendSubviewToBack:self.navLeftViewController.view];
   [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
     vc.view.frame = CGRectMake(self.contentView.frame.size.width - 100, 0, self.contentView.frame.size.width, self.contentView.frame.size.height);
+    [vc.view.layer setCornerRadius:4];
+    [vc.view.layer setShadowColor:[UIColor blackColor].CGColor];
+    [vc.view.layer setShadowOpacity:0.8];
+    [vc.view.layer setShadowOffset:CGSizeMake(-2, -2)];
   } completion:nil];
 }
 
