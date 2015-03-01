@@ -19,10 +19,7 @@
 		B25F87421A956F9200861858 /* TweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B25F87401A956F9200861858 /* TweetsViewController.m */; };
 		B25F87431A956F9200861858 /* TweetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B25F87411A956F9200861858 /* TweetsViewController.xib */; };
 		B2790D1B1AA3AC0100D4A74A /* menu-24.png in Resources */ = {isa = PBXBuildFile; fileRef = B2790D1A1AA3AC0100D4A74A /* menu-24.png */; };
-		B2790D1D1AA3AC6D00D4A74A /* menu-64.png in Resources */ = {isa = PBXBuildFile; fileRef = B2790D1C1AA3AC6D00D4A74A /* menu-64.png */; };
-		B2790D1F1AA3ACB200D4A74A /* menu-32.png in Resources */ = {isa = PBXBuildFile; fileRef = B2790D1E1AA3ACB200D4A74A /* menu-32.png */; };
 		B2790D221AA3AF6800D4A74A /* new-24.png in Resources */ = {isa = PBXBuildFile; fileRef = B2790D201AA3AF6800D4A74A /* new-24.png */; };
-		B2790D231AA3AF6800D4A74A /* new-32.png in Resources */ = {isa = PBXBuildFile; fileRef = B2790D211AA3AF6800D4A74A /* new-32.png */; };
 		B2A2A1761A981CD200D7A4E8 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A2A1741A981CD200D7A4E8 /* TweetCell.m */; };
 		B2A2A1771A981CD200D7A4E8 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A2A1751A981CD200D7A4E8 /* TweetCell.xib */; };
 		B2A2A1BD1A98FF2300D7A4E8 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = B2A2A1BC1A98FF2300D7A4E8 /* favorite.png */; };
@@ -77,10 +74,7 @@
 		B25F87401A956F9200861858 /* TweetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsViewController.m; sourceTree = "<group>"; };
 		B25F87411A956F9200861858 /* TweetsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetsViewController.xib; sourceTree = "<group>"; };
 		B2790D1A1AA3AC0100D4A74A /* menu-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-24.png"; sourceTree = "<group>"; };
-		B2790D1C1AA3AC6D00D4A74A /* menu-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-64.png"; sourceTree = "<group>"; };
-		B2790D1E1AA3ACB200D4A74A /* menu-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-32.png"; sourceTree = "<group>"; };
 		B2790D201AA3AF6800D4A74A /* new-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-24.png"; sourceTree = "<group>"; };
-		B2790D211AA3AF6800D4A74A /* new-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-32.png"; sourceTree = "<group>"; };
 		B2A2A1731A981CD200D7A4E8 /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
 		B2A2A1741A981CD200D7A4E8 /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
 		B2A2A1751A981CD200D7A4E8 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
@@ -181,9 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				B2790D201AA3AF6800D4A74A /* new-24.png */,
-				B2790D211AA3AF6800D4A74A /* new-32.png */,
-				B2790D1E1AA3ACB200D4A74A /* menu-32.png */,
-				B2790D1C1AA3AC6D00D4A74A /* menu-64.png */,
 				B2790D1A1AA3AC0100D4A74A /* menu-24.png */,
 				B21C6E9A1A9AAA35005063AE /* favorite_on.png */,
 				B21C6E981A9AAA2C005063AE /* retweet_on.png */,
@@ -399,14 +390,11 @@
 				B21C6E991A9AAA2C005063AE /* retweet_on.png in Resources */,
 				B258ADE51AA2ED06008C355A /* MentionsViewController.xib in Resources */,
 				B258ADD91AA1A945008C355A /* MenuItemCell.xib in Resources */,
-				B2790D231AA3AF6800D4A74A /* new-32.png in Resources */,
 				B2D706231A99977100FEF781 /* EditTweetViewController.xib in Resources */,
 				B2D706281A99A1C500FEF781 /* TweetDetailsViewController.xib in Resources */,
 				B2A2A1771A981CD200D7A4E8 /* TweetCell.xib in Resources */,
 				B2BBEB3C1A9310C300472CD9 /* LaunchScreen.xib in Resources */,
 				B2F8DF7D1AA1937C004F007F /* ProfileCell.xib in Resources */,
-				B2790D1F1AA3ACB200D4A74A /* menu-32.png in Resources */,
-				B2790D1D1AA3AC6D00D4A74A /* menu-64.png in Resources */,
 				B2BBEB391A9310C300472CD9 /* Images.xcassets in Resources */,
 				B2A2A1C01A98FF2C00D7A4E8 /* reply.png in Resources */,
 				B2A2A1C11A98FF2C00D7A4E8 /* retweet.png in Resources */,
